@@ -6,23 +6,24 @@ services:
     container_name: VE-postgres
     image: postgres:latest
     volumes:
-      - ./Vol-PF-postgres:/var/lib/postgresql/data
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-    ports:
-      - 5431:5432
+      - ./Vol-postgres:/var/lib/postgresql/data
+    ports :
+      - 5432:5432
     environment:
+      POSTGRES_DB: editor
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-
 
   VE-minio:
     container_name: VE-minio
     image: minio/minio:latest
     volumes:
-      - ./Vol-PF-Minio:/data
+      - ./Vol-Minio:/data
     environment:
       MINIO_ACCESS_KEY: minioadmin
       MINIO_SECRET_KEY: minioadmin
+
+
     ports:
       - 9001:9000
       - 9002:9001

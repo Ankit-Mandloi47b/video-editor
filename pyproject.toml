@@ -11,6 +11,8 @@ python = "^3.8"
 fastapi = "^0.95.2"
 requests = "^2.31.0"
 sqlalchemy = "^2.0.15"
+minio = "^7.1.15"
+psycopg2-binary = "^2.9.6"
 
 
 [build-system]
