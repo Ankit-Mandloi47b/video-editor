@@ -13,6 +13,7 @@ requests = "^2.31.0"
 sqlalchemy = "^2.0.15"
 minio = "^7.1.15"
 psycopg2-binary = "^2.9.6"
+celery = "^5.2.7"
 
 
 [build-system]
