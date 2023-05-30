@@ -1,8 +1,9 @@
 from celery import Celery
+import env
 
 celery_app = Celery(
     'video_editor',
-    broker='amqp://user:password@rabbitmq:5672//',
+    broker=f'amqp://{env.RABBITMQ_USER}:{env.RABBITMQ_PASSWORD}@{env.RABBITMQ_HOST}:{env.RABBITMQ_PORT}',
     result_backend='rpc://'
 )
 celery_app.autodiscover_tasks(['tasks.py'])
