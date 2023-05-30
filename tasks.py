@@ -8,7 +8,6 @@ from Connections.postgres_connection import session
 from schemas import video_metadata
 
 
-
 @celery_app.task(queue='postgres_connection')
 def add_metadata(data: dict):
     try:
@@ -19,16 +18,24 @@ def add_metadata(data: dict):
         return req_id
 
     except ConnectionError:
+        session.rollback()
         raise HTTPException(status_code=501, detail='error in updating metadata on postgres')
 
 
 @celery_app.task(queue='headless_browser')
-def open_webpage():
+def open_webpage(request_id):
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
         page = browser.new_page()
-        page.wait_for_selector('video')
         page.goto('file:///home/billion/PycharmProjects/Movie_editor/index.html')
+
+        page.wait_for_selector("video[src='http://upload.wikimedia.org/wikipedia/commons/7/79"
+                               "/Big_Buck_Bunny_small.ogv']")
+
+        page.evaluate('document.querySelector("video").play()')
+
+        # while not page.evaluate(' document.querySelector("video").ended'):
+        #     continue
 
         # for downloading video
         # import urllib.request

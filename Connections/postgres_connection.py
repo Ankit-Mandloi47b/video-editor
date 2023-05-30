@@ -11,4 +11,4 @@ try:
     base = declarative_base()
 
 except Exception as e:
-    print(e)
+    print(f'error in establishing connection with database{e}')
