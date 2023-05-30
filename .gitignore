@@ -3,3 +3,4 @@ poetry.lock
 **/Vol-postgres
 **/.idea
 **/__pycache__
+**/videos

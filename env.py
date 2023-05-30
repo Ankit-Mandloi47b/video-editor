@@ -4,6 +4,7 @@ MINIO_ACCESS_KEY = os.getenv('MINIO_ACCESS_KEY', 'minioadmin')
 MINIO_SECRET_KEY = os.getenv('MINIO_SECRET_KEY', 'minioadmin')
 MINIO_HOST = 'localhost'
 MINIO_PORT = '9000'
+MINIO_BUCKET = 'videos-collection'
 
 DB = os.getenv('POSTGRES_DB', 'editor')
 DB_USER = os.getenv('POSTGRES_USER', 'postgres')

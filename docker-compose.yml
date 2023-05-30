@@ -37,5 +37,9 @@ services:
       RABBITMQ_DEFAULT_USER: guest
       RABBITMQ_DEFAULT_PASS: guest
 
-
+  VE-redis:
+    image: redislabs/rejson:latest
+    container_name: VE-redis
+    ports:
+      - 6379:6379
 

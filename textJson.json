@@ -40,27 +40,3 @@
     ]
   }
 }
-
-
-
-{
-"x": "0",
-"y": "0",
-"style": {
-"background": "#0000",
-"fontSize": "40",
-"fontFamily": "monospace",
-"fill": "#f10404",
-"fontStyle": "normal",
-"align": "center",
-"textDecoration": "normal"
-},
-"opacity": "1",
-"draggable": "true",
-"interactive": "true",
-"buttonMode": "true",
-"dataId": "1",
-"from": "0",
-"text": "Text1"
-}
-
