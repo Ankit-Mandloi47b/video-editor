@@ -8,9 +8,7 @@ app = FastAPI()
 @app.post("/metadata", status_code=status.HTTP_200_OK)
 def get_data(data: dict):
     try:
-        req_id = add_metadata(data)
-        chain(open_webpage.s()).apply_async()
-        return {'message': "Database updated ",
-                'request id': req_id}
+        res = chain(add_metadata.s(data), open_webpage.s()).apply_async()
+        return {'data updated': res.parent.get()}
     except HTTPException:
         HTTPException(status_code=501, detail='error in updating metadata on postgres')
