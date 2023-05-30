@@ -7,7 +7,7 @@ services:
     image: postgres:latest
     volumes:
       - ./Vol-postgres:/var/lib/postgresql/data
-    ports :
+    ports:
       - 5432:5432
     environment:
       POSTGRES_DB: editor
@@ -37,9 +37,16 @@ services:
       RABBITMQ_DEFAULT_USER: guest
       RABBITMQ_DEFAULT_PASS: guest
 
-  VE-redis:
-    image: redislabs/rejson:latest
-    container_name: VE-redis
+  VE-Api:
+    container_name: VE-Api
+    build: .
+    volumes:
+      - .:./app
+    env_file:
+      - .env
+    depends_on:
+      - VE-minio
+      - VE-postgres
+      - VE-RabbitMQ
     ports:
-      - 6379:6379
-
+      - 8000:8000
