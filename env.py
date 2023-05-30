@@ -10,3 +10,6 @@ DB_USER = os.getenv('POSTGRES_USER', 'postgres')
 DB_PASSWORD = os.getenv('POSTGRES_PASSWORD', 'postgres')
 DB_PORT = '5432'
 DB_HOST = 'localhost'
+
+RABBITMQ_DEFAULT_USER = os.getenv('RABBITMQ_DEFAULT_USER', 'guest')
+RABBITMQ_DEFAULT_PASS = os.getenv('RABBITMQ_DEFAULT_USER', 'guest')

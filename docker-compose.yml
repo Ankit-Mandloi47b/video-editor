@@ -22,11 +22,19 @@ services:
     environment:
       MINIO_ACCESS_KEY: minioadmin
       MINIO_SECRET_KEY: minioadmin
-
-
     ports:
       - 9001:9000
       - 9002:9001
     command: server /data --console-address ":9001"
+
+  VE-RabbitMQ:
+    image: rabbitmq:management
+    container_name: VE-RabbitMQ
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
 
 
