@@ -22,11 +22,10 @@ services:
     environment:
       MINIO_ACCESS_KEY: minioadmin
       MINIO_SECRET_KEY: minioadmin
-
-
     ports:
       - 9001:9000
       - 9002:9001
     command: server /data --console-address ":9001"
+
 
 
