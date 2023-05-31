@@ -1,3 +1,5 @@
+from time import sleep
+sleep(5)
 from celery import chain
 from fastapi import FastAPI, HTTPException, status
 

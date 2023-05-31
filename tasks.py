@@ -1,12 +1,9 @@
 from datetime import datetime
 
 from fastapi import HTTPException
-from minio.error import S3Error
 from playwright.sync_api import sync_playwright
 
-import env
 from Connections.celery_connection import celery_app
-from Connections.minio_connection import minio_client
 from Connections.postgres_connection import session
 from schemas import video_metadata
 from logs import logger
@@ -61,8 +58,6 @@ def get_json_from_db(req_id: int):
 
 
 
-
-
 # @celery_app.task(queue='minio')
 # def add_video(req_id):
 #     my_bucket = env.MINIO_BUCKET
@@ -86,5 +81,4 @@ def get_json_from_db(req_id: int):
 #     print("Inside update_database")
 #     session.query(video_metadata).filter(video_metadata.id == req_id).update()
 #     session.commit()
-
 

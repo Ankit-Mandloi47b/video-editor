@@ -4,6 +4,7 @@ WORKDIR /app
 COPY requirements.txt .
 RUN python3 -m pip install --upgrade pip
 RUN pip install -r requirements.txt
+RUN python -m playwright install
 COPY . /app
-EXPOSE 3000
-CMD ["uvicorn", "router:app", "--host", "0.0.0.0", "--port", "3000", "--reload"]
+EXPOSE 8000
+CMD ["uvicorn", "router:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]

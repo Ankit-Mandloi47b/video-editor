@@ -1,0 +1,8 @@
+fastapi
+celery
+sqlalchemy
+minio
+psycopg2-binary
+uvicorn
+requests
+playwright
