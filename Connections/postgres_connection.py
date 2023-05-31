@@ -13,4 +13,4 @@ try:
 
 except Exception as e:
     print(f'error in establishing connection with database{e}')
-    raise HTTPException(status_code=500)
+    raise HTTPException(status_code=503)
