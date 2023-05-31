@@ -27,22 +27,26 @@ services:
       - "9001:9001"
     command: server /data --console-address ":9001"
 
-
-  api:
-    container_name: api-container
-    build:
-      context: .
-      dockerfile: Dockerfile
-    environment:
-        POSTGRES_DB: editor
-        POSTGRES_USER: postgres
-        POSTGRES_PASSWORD: postgres
-        POSTGRES_HOST: VE-postgres
-        MINIO_HOST: VE-minio
-        DB_PORT: 5432
-    depends_on:
-      - VE-minio
-      - VE-postgres
-    ports:
-      - 8000:8000
+#
+#  api:
+#    container_name: api-container
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    environment:
+#        POSTGRES_DB: editor
+#        POSTGRES_USER: postgres
+#        POSTGRES_PASSWORD: postgres
+#        POSTGRES_HOST: VE-postgres
+#        MINIO_HOST: VE-minio
+#        MINIO_ACCESS_KEY: minioadmin
+#        MINIO_SECRET_KEY: minioadmin
+#        DB_PORT: 5432
+#        DB_HOST: VE-postgres
+#        MINIO_PORT: 9000
+#    depends_on:
+#      - VE-minio
+#      - VE-postgres
+#    ports:
+#      - 8000:8000
 
