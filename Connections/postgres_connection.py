@@ -1,6 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 import env
+from fastapi import HTTPException, status
 
 try:
     engine = create_engine(
@@ -12,3 +13,4 @@ try:
 
 except Exception as e:
     print(f'error in establishing connection with database{e}')
+    raise HTTPException(status_code=500)

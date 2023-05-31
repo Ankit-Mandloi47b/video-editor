@@ -17,18 +17,19 @@ def add_metadata(data: dict):
         logger.info('added metadata info in database')
         return req_id
 
-    except ConnectionError:
+    except Exception:
         session.rollback()
         logger.error('error in adding metadata to database')
-        raise HTTPException(status_code=501, detail='error in updating metadata on postgres')
+        raise HTTPException(status_code=500, detail='error in updating metadata on postgres')
 
 
 def open_webpage(request_id):
+
     with sync_playwright() as p:
         logger.info('headless mode on')
         browser = p.firefox.launch(headless=False)
         page = browser.new_page()
-        page.goto(f'http://localhost:3000/render/{request_id}')
+        page.goto(f'http://localhost:3000/render1/{request_id}')
 
         page.wait_for_selector('button')
 
@@ -43,9 +44,12 @@ def open_webpage(request_id):
         browser.close()
 
 
+
 def get_json_from_db(req_id):
     try:
         result = session.query(video_metadata).get(req_id)
+        if result is None:
+            raise HTTPException(status_code=404)
         return result.metadata_info
-    except ConnectionError as e:
-        raise HTTPException(status_code=501, detail=f'error in fetching json from database with ERROR: {e}')
+    except Exception :
+        raise HTTPException(status_code=500)
