@@ -1,0 +1,6 @@
+poetry.lock
+**/Vol-Minio
+**/Vol-postgres
+**/.idea
+**/__pycache__
+**/videos
