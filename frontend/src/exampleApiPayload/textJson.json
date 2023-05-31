@@ -1,0 +1,64 @@
+[
+    {
+        "x": 349,
+        "y": 153,
+        "style": {
+            "background": "#0000",
+            "fontSize": 65,
+            "fontFamily": "monospace",
+            "fill": [
+                "#ffffff",
+                "#00ff99"
+            ],
+            "fontStyle": "italic",
+            "align": "center",
+            "textDecoration": "normal",
+            "fontWeight": "bold",
+            "stroke": "#4a1850",
+            "strokeThickness": 5,
+            "dropShadow": true,
+            "dropShadowColor": "#000000",
+            "dropShadowBlur": 4,
+            "dropShadowAngle": 0.5235987755982988,
+            "dropShadowDistance": 6,
+            "lineJoin": "round"
+        },
+        "opacity": 1,
+        "draggable": true,
+        "interactive": true,
+        "buttonMode": true,
+        "dataId": 0,
+        "from": 0,
+        "text": "Text0",
+        "transition": {
+            "type": "SLIDE_RIGHT",
+            "x": -1,
+            "y": 0,
+            "z": 0,
+            "from": [
+                -200,
+                153
+            ]
+        }
+    },
+    {
+        "x": 0,
+        "y": 0,
+        "style": {
+            "background": "#0000",
+            "fontSize": 40,
+            "fontFamily": "monospace",
+            "fill": "#f10404",
+            "fontStyle": "normal",
+            "align": "center",
+            "textDecoration": "normal"
+        },
+        "opacity": 1,
+        "draggable": true,
+        "interactive": true,
+        "buttonMode": true,
+        "dataId": 1,
+        "from": 0,
+        "text": "Text1"
+    }
+]

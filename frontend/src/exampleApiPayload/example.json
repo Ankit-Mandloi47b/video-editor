@@ -1,0 +1,33 @@
+{
+    "name": "Untitled",
+    "id": 501936,
+    "style": {
+        "common": {
+            "backgroundColor": "#000000"
+        },
+        "real": {
+            "width": 336.5,
+            "height": 189.28125,
+            "top": 0,
+            "left": 0
+        },
+        "relative": {
+            "width": 1,
+            "height": 1,
+            "top": 0,
+            "left": 0
+        }
+    },
+    "timeline": {
+        "duration": 5.906,
+        "start": null,
+        "end": null
+    },
+    "objects": [
+    ],
+    "output": {
+        "width": 1280,
+        "height": 720,
+        "fps": 30
+    }
+}

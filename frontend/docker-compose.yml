@@ -1,0 +1,10 @@
+version: '0.1'
+
+services:
+  app: 
+    container_name: test-name
+    image: test-image
+    build:
+      context: .
+    ports:
+      - 3010:80

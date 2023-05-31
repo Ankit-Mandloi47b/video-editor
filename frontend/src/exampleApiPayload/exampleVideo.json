@@ -1,0 +1,53 @@
+{
+    "rule": "",
+    "controlForm": "pixiko-video-control-form",
+    "uiControl": "pixiko-ui-control",
+    "uiTimeline": "pixiko-ui-timeline-video",
+    "type": "pixiko_video",
+    "text": "/storage/users/1329/video/sample-28.mp4",
+    "url": "/storage/users/1329/video/sample-28.mp4",
+    "timeEffect": [],
+    "graphEffect": [],
+    "motionEffect": [],
+    "volume": 1,
+    "secret": "1614620346392_0",
+    "work": {
+        "show": true
+    },
+    "property": {
+        "videoWidth": 1280,
+        "videoHeight": 720
+    },
+    "timeline": {
+        "start": 0,
+        "end": 5.9059,
+        "duration": 5.9059,
+        "originDuration": 5.9059
+    },
+    "style": {
+        "common": {
+            "objectFit": "contain"
+        },
+        "real": {
+            "top": 0,
+            "left": 0,
+            "width": 336.5,
+            "height": 189.28125,
+            "angle": 0
+        },
+        "relative": {
+            "left": 0,
+            "width": 1,
+            "height": 1,
+            "top": 0
+        }
+    },
+    "_uid": 1,
+    "filterOptions": {
+        "brightness": 100,
+        "opacity": 100,
+        "contrast": 100,
+        "saturate": 100,
+        "blur": 0
+    }
+}
