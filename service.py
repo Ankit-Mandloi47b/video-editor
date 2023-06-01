@@ -75,7 +75,7 @@ def add_video(req_id: int, video_file: bytes = File(...)):
         update_database(req_id, video_path, my_bucket, 'successful')
     except Exception as e:
         update_database(req_id, video_path, my_bucket, "failed")
-        return {"message": "Error uploading video", "error": str(e)}
+        raise HTTPException(status_code=501)
 
 
 def update_database(req_id, video_path: str, bucket_name: str, status: str):
@@ -87,11 +87,6 @@ def update_database(req_id, video_path: str, bucket_name: str, status: str):
                 video_metadata.status: status
 
             })
-        # object = session.query(video_metadata).filter(video_metadata.id == req_id).first()
-        # object.video_path = video_path,
-        # object.bucket_name = bucket_name,
-        # object.status = status
-        # session.add()
         session.commit()
     except Exception as e:
-        raise HTTPException(status_code=501,detail=str(e))
+        raise HTTPException(status_code=501, detail=str(e))

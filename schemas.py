@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, DateTime, JSON, ARRAY, String, BOOLEAN
+from sqlalchemy import Column, Integer, JSON, ARRAY, String
 
 from Connections.postgres_connection import base, engine
 
