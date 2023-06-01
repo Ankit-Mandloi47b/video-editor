@@ -5,3 +5,4 @@ poetry.lock
 **/__pycache__
 **/videos
 mylog.log
+commands.txt

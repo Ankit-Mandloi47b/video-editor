@@ -78,8 +78,7 @@ def add_video(req_id: int, video_file: bytes = File(...)):
 
 def update_database(req_id):
     try:
-        print("Inside update_database")
-        session.query(video_metadata).filter(video_metadata.id == req_id).update()
+        session.query(video_metadata).filter(video_metadata.id == req_id).update({video_metadata.edited_time: datetime.now()})
         session.commit()
     except Exception:
         raise HTTPException(status_code=501)

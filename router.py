@@ -35,22 +35,16 @@ def get_data(data: List, background_tasks: BackgroundTasks):
 def get_json(request_id: int):
     try:
         return get_json_from_db(request_id)
-
     except HTTPException:
         raise HTTPException(status_code=404)
 
 
 @app.post("/video/{req_id}")
 def save_video(req_id: int, video_file: bytes = File(...)):
+    try:
+        add_video(req_id, video_file)
+        update_database(req_id)
+    except HTTPException:
+        raise HTTPException(status_code=501)
 
-    add_video(req_id, video_file)
-    # update_database(req_id)
 
-# @app.post("/video/{request_id}")
-# def save_video(request_id: int, video_file: UploadFile = Form(...)):
-#     try:
-#         print(video_file.content_type)
-#         add_video(request_id, video_file)
-#         # update_database(request_id)
-#     except Exception as e:
-#         raise HTTPException(status_code=501, detail=f'error in minio{e}')
