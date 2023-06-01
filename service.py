@@ -1,9 +1,10 @@
+import io
 from datetime import datetime
-from io import BytesIO
 from time import sleep
 from typing import List
 
-from fastapi import HTTPException
+import magic
+from fastapi import HTTPException, UploadFile, Form, File
 from minio import S3Error
 from playwright.sync_api import sync_playwright
 from Connections.postgres_connection import session
@@ -13,7 +14,7 @@ import env
 from Connections.minio_connection import minio_client
 
 
-def add_metadata(data:List):
+def add_metadata(data: List):
     try:
         metadata_object = video_metadata(metadata_info=data, uploaded_time=datetime.now())
         session.add(metadata_object)
@@ -39,7 +40,7 @@ def open_webpage(request_id):
         page.wait_for_selector('video')
         while not page.evaluate(' document.querySelector("video").ended'):
             continue
-
+        sleep(5)
         browser.close()
 
 
@@ -55,22 +56,24 @@ def get_json_from_db(req_id):
         raise HTTPException(status_code=500)
 
 
-def add_video(req_id, video_file):
+def add_video(req_id: int, video_file: bytes = File(...)):
     my_bucket = env.MINIO_BUCKET
-    bucket = minio_client.bucket_exists(my_bucket)
-    if not bucket:
+
+    # Create the bucket if it doesn't exist
+    if not minio_client.bucket_exists(my_bucket):
         minio_client.make_bucket(my_bucket)
+    content_type = magic.from_buffer(video_file, mime=True)
     try:
+        # Save the video to MinIO
         minio_client.put_object(
             bucket_name=my_bucket,
-            object_name=f'{req_id}/video.mp4',
-            data=BytesIO(video_file),
-            length=len(video_file)
+            object_name=f"{req_id}/video.mp4",
+            data=io.BytesIO(video_file),
+            length=len(video_file),
+            content_type=content_type
         )
-        return req_id
-    except S3Error as e:
-        print('ERROR IN MINIO', e)
-        HTTPException(status_code=501, detail='error in updating video file in minio')
+    except Exception as e:
+        return {"message": "Error uploading video", "error": str(e)}
 
 
 def update_database(req_id):

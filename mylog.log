@@ -1,3 +1,88 @@
-root 2023-05-31 16:57:20,441-->added metadata info in database 22
-asyncio 2023-05-31 16:57:20,442-->Using selector: EpollSelector 59
-root 2023-05-31 16:57:20,741-->headless mode on 33
+root 2023-06-01 12:06:05,652-->added metadata info in database 23
+asyncio 2023-06-01 12:06:05,654-->Using selector: EpollSelector 59
+root 2023-06-01 12:06:05,950-->headless mode on 34
+multipart.multipart 2023-06-01 12:06:31,328-->Calling on_part_begin with no data 586
+multipart.multipart 2023-06-01 12:06:31,328-->Calling on_header_field with data[59:78] 583
+multipart.multipart 2023-06-01 12:06:31,328-->Calling on_header_value with data[80:125] 583
+multipart.multipart 2023-06-01 12:06:31,328-->Calling on_header_end with no data 586
+multipart.multipart 2023-06-01 12:06:31,328-->Calling on_header_field with data[127:139] 583
+multipart.multipart 2023-06-01 12:06:31,328-->Calling on_header_value with data[141:151] 583
+multipart.multipart 2023-06-01 12:06:31,328-->Calling on_header_end with no data 586
+multipart.multipart 2023-06-01 12:06:31,328-->Calling on_headers_finished with no data 586
+multipart.multipart 2023-06-01 12:06:31,329-->Calling on_part_data with data[155:65005] 583
+multipart.multipart 2023-06-01 12:06:31,329-->Calling on_part_data with data[0:32768] 583
+multipart.multipart 2023-06-01 12:06:31,330-->Calling on_part_data with data[0:32759] 583
+multipart.multipart 2023-06-01 12:06:31,330-->Calling on_part_data with data[0:1] 583
+multipart.multipart 2023-06-01 12:06:31,330-->Calling on_part_data with data[32760:32768] 583
+multipart.multipart 2023-06-01 12:06:31,334-->Calling on_part_data with data[0:262144] 583
+multipart.multipart 2023-06-01 12:06:31,338-->Calling on_part_data with data[0:262144] 583
+multipart.multipart 2023-06-01 12:06:31,341-->Calling on_part_data with data[0:171725] 583
+multipart.multipart 2023-06-01 12:06:31,341-->Calling on_part_data with data[0:1] 583
+multipart.multipart 2023-06-01 12:06:31,342-->Calling on_part_data with data[171726:262144] 583
+multipart.multipart 2023-06-01 12:06:31,346-->Calling on_part_data with data[0:194736] 583
+multipart.multipart 2023-06-01 12:06:31,346-->Calling on_part_data with data[0:1] 583
+multipart.multipart 2023-06-01 12:06:31,347-->Calling on_part_data with data[194737:262144] 583
+multipart.multipart 2023-06-01 12:06:31,351-->Calling on_part_data with data[0:52493] 583
+multipart.multipart 2023-06-01 12:06:31,351-->Calling on_part_data with data[0:1] 583
+multipart.multipart 2023-06-01 12:06:31,351-->Calling on_part_data with data[52494:69677] 583
+multipart.multipart 2023-06-01 12:06:31,351-->Calling on_part_data with data[0:1] 583
+multipart.multipart 2023-06-01 12:06:31,352-->Calling on_part_data with data[69678:262144] 583
+multipart.multipart 2023-06-01 12:06:31,355-->Calling on_part_data with data[0:54034] 583
+multipart.multipart 2023-06-01 12:06:31,355-->Calling on_part_data with data[0:1] 583
+multipart.multipart 2023-06-01 12:06:31,356-->Calling on_part_data with data[54035:146216] 583
+multipart.multipart 2023-06-01 12:06:31,357-->Calling on_part_data with data[0:1] 583
+multipart.multipart 2023-06-01 12:06:31,358-->Calling on_part_data with data[146217:262144] 583
+multipart.multipart 2023-06-01 12:06:31,364-->Calling on_part_data with data[0:231711] 583
+multipart.multipart 2023-06-01 12:06:31,364-->Calling on_part_data with data[0:1] 583
+multipart.multipart 2023-06-01 12:06:31,365-->Calling on_part_data with data[231712:262144] 583
+multipart.multipart 2023-06-01 12:06:31,369-->Calling on_part_data with data[0:262144] 583
+multipart.multipart 2023-06-01 12:06:31,373-->Calling on_part_data with data[0:262144] 583
+multipart.multipart 2023-06-01 12:06:31,376-->Calling on_part_data with data[0:123307] 583
+multipart.multipart 2023-06-01 12:06:31,376-->Calling on_part_data with data[0:1] 583
+multipart.multipart 2023-06-01 12:06:31,378-->Calling on_part_data with data[123308:262144] 583
+multipart.multipart 2023-06-01 12:06:31,380-->Calling on_part_data with data[0:173191] 583
+multipart.multipart 2023-06-01 12:06:31,380-->Calling on_part_data with data[0:1] 583
+multipart.multipart 2023-06-01 12:06:31,381-->Calling on_part_data with data[173192:262144] 583
+multipart.multipart 2023-06-01 12:06:31,383-->Calling on_part_data with data[0:262144] 583
+multipart.multipart 2023-06-01 12:06:31,384-->Calling on_part_data with data[0:79425] 583
+multipart.multipart 2023-06-01 12:06:31,385-->Calling on_part_data with data[0:1] 583
+multipart.multipart 2023-06-01 12:06:31,385-->Calling on_part_data with data[79426:262140] 583
+multipart.multipart 2023-06-01 12:06:31,385-->Calling on_part_data with data[0:1] 583
+multipart.multipart 2023-06-01 12:06:31,386-->Calling on_part_data with data[262141:262144] 583
+multipart.multipart 2023-06-01 12:06:31,390-->Calling on_part_data with data[0:181365] 583
+multipart.multipart 2023-06-01 12:06:31,390-->Calling on_part_data with data[0:1] 583
+multipart.multipart 2023-06-01 12:06:31,391-->Calling on_part_data with data[181366:262144] 583
+multipart.multipart 2023-06-01 12:06:31,395-->Calling on_part_data with data[0:169651] 583
+multipart.multipart 2023-06-01 12:06:31,396-->Calling on_part_data with data[0:1] 583
+multipart.multipart 2023-06-01 12:06:31,396-->Calling on_part_data with data[169652:257864] 583
+multipart.multipart 2023-06-01 12:06:31,396-->Calling on_part_data with data[0:1] 583
+multipart.multipart 2023-06-01 12:06:31,396-->Calling on_part_data with data[257865:262144] 583
+multipart.multipart 2023-06-01 12:06:31,399-->Calling on_part_data with data[0:262139] 583
+multipart.multipart 2023-06-01 12:06:31,399-->Calling on_part_data with data[0:1] 583
+multipart.multipart 2023-06-01 12:06:31,399-->Calling on_part_data with data[262140:262144] 583
+multipart.multipart 2023-06-01 12:06:31,401-->Calling on_part_data with data[0:144027] 583
+multipart.multipart 2023-06-01 12:06:31,401-->Calling on_part_data with data[0:1] 583
+multipart.multipart 2023-06-01 12:06:31,402-->Calling on_part_data with data[144028:262144] 583
+multipart.multipart 2023-06-01 12:06:31,403-->Calling on_part_data with data[0:82433] 583
+multipart.multipart 2023-06-01 12:06:31,404-->Calling on_part_data with data[0:1] 583
+multipart.multipart 2023-06-01 12:06:31,404-->Calling on_part_data with data[82434:256640] 583
+multipart.multipart 2023-06-01 12:06:31,404-->Calling on_part_data with data[0:1] 583
+multipart.multipart 2023-06-01 12:06:31,404-->Calling on_part_data with data[256641:262144] 583
+multipart.multipart 2023-06-01 12:06:31,408-->Calling on_part_data with data[0:262144] 583
+multipart.multipart 2023-06-01 12:06:31,410-->Calling on_part_data with data[0:262144] 583
+multipart.multipart 2023-06-01 12:06:31,412-->Calling on_part_data with data[0:262144] 583
+multipart.multipart 2023-06-01 12:06:31,414-->Calling on_part_data with data[0:262144] 583
+multipart.multipart 2023-06-01 12:06:31,416-->Calling on_part_data with data[0:262144] 583
+multipart.multipart 2023-06-01 12:06:31,417-->Calling on_part_data with data[0:1418] 583
+multipart.multipart 2023-06-01 12:06:31,417-->Calling on_part_data with data[0:1] 583
+multipart.multipart 2023-06-01 12:06:31,418-->Calling on_part_data with data[1419:130158] 583
+multipart.multipart 2023-06-01 12:06:31,418-->Calling on_part_end with no data 586
+multipart.multipart 2023-06-01 12:06:31,418-->Calling on_end with no data 586
+urllib3.connectionpool 2023-06-01 12:06:31,427-->Starting new HTTP connection (1): localhost:9000 244
+urllib3.connectionpool 2023-06-01 12:06:31,434-->http://localhost:9000 "GET /videos-collection?location= HTTP/1.1" 200 0 546
+urllib3.connectionpool 2023-06-01 12:06:31,436-->http://localhost:9000 "HEAD /videos-collection HTTP/1.1" 200 0 546
+urllib3.connectionpool 2023-06-01 12:06:31,456-->http://localhost:9000 "POST /videos-collection/63/video.mp4?uploads= HTTP/1.1" 200 0 546
+urllib3.connectionpool 2023-06-01 12:06:31,482-->http://localhost:9000 "PUT /videos-collection/63/video.mp4?partNumber=2&uploadId=OWNhZDk0YWUtMzdlZi00MGU1LTg5OTAtYzljYTgwZWYzYTcxLjQxNmI2OWExLWI0M2YtNDQxYS1iNTU5LTk2OThlOTkyZmEyNg HTTP/1.1" 200 0 546
+urllib3.connectionpool 2023-06-01 12:06:31,483-->Starting new HTTP connection (2): localhost:9000 244
+urllib3.connectionpool 2023-06-01 12:06:31,542-->http://localhost:9000 "PUT /videos-collection/63/video.mp4?partNumber=1&uploadId=OWNhZDk0YWUtMzdlZi00MGU1LTg5OTAtYzljYTgwZWYzYTcxLjQxNmI2OWExLWI0M2YtNDQxYS1iNTU5LTk2OThlOTkyZmEyNg HTTP/1.1" 200 0 546
+urllib3.connectionpool 2023-06-01 12:06:31,548-->http://localhost:9000 "POST /videos-collection/63/video.mp4?uploadId=OWNhZDk0YWUtMzdlZi00MGU1LTg5OTAtYzljYTgwZWYzYTcxLjQxNmI2OWExLWI0M2YtNDQxYS1iNTU5LTk2OThlOTkyZmEyNg HTTP/1.1" 200 0 546
