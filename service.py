@@ -2,10 +2,8 @@ import io
 from datetime import datetime
 from time import sleep
 from typing import List
-
 import magic
-from fastapi import HTTPException, UploadFile, Form, File
-from minio import S3Error
+from fastapi import HTTPException, File
 from playwright.sync_api import sync_playwright
 from Connections.postgres_connection import session
 from logs import logger
@@ -16,7 +14,7 @@ from Connections.minio_connection import minio_client
 
 def add_metadata(data: List):
     try:
-        metadata_object = video_metadata(metadata_info=data, uploaded_time=datetime.now())
+        metadata_object = video_metadata(metadata_info=data)
         session.add(metadata_object)
         session.commit()
         req_id = metadata_object.id
@@ -63,22 +61,37 @@ def add_video(req_id: int, video_file: bytes = File(...)):
     if not minio_client.bucket_exists(my_bucket):
         minio_client.make_bucket(my_bucket)
     content_type = magic.from_buffer(video_file, mime=True)
+    video_path = f"{req_id}/video.mp4"
     try:
         # Save the video to MinIO
+
         minio_client.put_object(
             bucket_name=my_bucket,
-            object_name=f"{req_id}/video.mp4",
+            object_name=video_path,
             data=io.BytesIO(video_file),
             length=len(video_file),
             content_type=content_type
         )
+        update_database(req_id, video_path, my_bucket, 'successful')
     except Exception as e:
+        update_database(req_id, video_path, my_bucket, "failed")
         return {"message": "Error uploading video", "error": str(e)}
 
 
-def update_database(req_id):
+def update_database(req_id, video_path: str, bucket_name: str, status: str):
     try:
-        session.query(video_metadata).filter(video_metadata.id == req_id).update({video_metadata.edited_time: datetime.now()})
+        session.query(video_metadata).filter(video_metadata.id == req_id).update(
+            {
+                video_metadata.video_path: video_path,
+                video_metadata.bucket_name: bucket_name,
+                video_metadata.status: status
+
+            })
+        # object = session.query(video_metadata).filter(video_metadata.id == req_id).first()
+        # object.video_path = video_path,
+        # object.bucket_name = bucket_name,
+        # object.status = status
+        # session.add()
         session.commit()
-    except Exception:
-        raise HTTPException(status_code=501)
+    except Exception as e:
+        raise HTTPException(status_code=501,detail=str(e))

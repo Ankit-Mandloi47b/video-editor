@@ -1,12 +1,8 @@
-import io
-from io import BytesIO
 from typing import List
 from fastapi import FastAPI, HTTPException, status, BackgroundTasks, UploadFile, Form, File
-import env
-from Connections.minio_connection import minio_client
 from service import add_metadata, open_webpage, get_json_from_db, add_video, update_database
 from fastapi.middleware.cors import CORSMiddleware
-import magic
+
 
 app = FastAPI()
 
@@ -43,8 +39,7 @@ def get_json(request_id: int):
 def save_video(req_id: int, video_file: bytes = File(...)):
     try:
         add_video(req_id, video_file)
-        update_database(req_id)
-    except HTTPException:
-        raise HTTPException(status_code=501)
+    except HTTPException as e:
+        raise HTTPException(status_code=501, detail=str(e))
 
 
